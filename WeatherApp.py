@@ -15,7 +15,7 @@ class WeatherApp:
         self.accent_color = "#00ADB5"
         self.text_color = "white"
 
-        self.root.title("Pogoda")
+        self.root.title("WeatherApp")
         self.root.geometry("450x300")
         self.root.configure(bg=self.bg_color)
 
