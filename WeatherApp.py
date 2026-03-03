@@ -24,7 +24,6 @@ class WeatherApp:
             bg=self.bg_color, fg=self.text_color
         ).pack(pady=(20, 5))
 
-        # 2. Pole Entry
         self.city_entry = tk.Entry(
             root, font=("Consolas", 12), bg="#222831", fg="white",
             insertbackground="white", borderwidth=0, justify="center"
