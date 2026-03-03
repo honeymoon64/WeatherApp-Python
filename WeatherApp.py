@@ -10,7 +10,7 @@ class WeatherApp:
     def __init__(self, root, weather_manager):
         self.root = root
         self.weather_manager = weather_manager
-        self.root.bind('<Return>', lambda event: self.wyswietl_pogode())
+        self.root.bind('<Return>', lambda event: self.display_weather())
         self.bg_color = "#121212"
         self.accent_color = "#00ADB5"
         self.text_color = "white"
@@ -31,7 +31,7 @@ class WeatherApp:
         self.city_entry.pack(pady=10, ipady=5)
 
         self.check_button = tk.Button(
-            root, text="SPRAWDŹ", command=self.wyswietl_pogode,
+            root, text="SPRAWDŹ", command=self.display_weather(),
             bg=self.accent_color, fg="white", font=("Consolas", 9, "bold"),
             padx=15, pady=5, bd=0, cursor="hand2"
         )
@@ -61,7 +61,7 @@ class WeatherApp:
         )
         self.air_label.pack(anchor="w")
 
-    def wyswietl_pogode(self, event=None):
+    def display_weather(self, event=None):
         miasto = self.city_entry.get()
         dane = self.weather_manager.get_weather(miasto)
 
