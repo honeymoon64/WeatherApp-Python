@@ -31,7 +31,7 @@ class WeatherApp:
         self.city_entry.pack(pady=10, ipady=5)
 
         self.check_button = tk.Button(
-            root, text="SPRAWDŹ", command=self.display_weather(),
+            root, text="SPRAWDŹ", command=self.display_weather,
             bg=self.accent_color, fg="white", font=("Consolas", 9, "bold"),
             padx=15, pady=5, bd=0, cursor="hand2"
         )
