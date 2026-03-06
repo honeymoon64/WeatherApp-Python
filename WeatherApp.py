@@ -16,7 +16,7 @@ class WeatherApp:
         self.text_color = "white"
 
         self.root.title("WeatherApp")
-        self.root.geometry("450x300")
+        self.root.geometry("450x400")
         self.root.configure(bg=self.bg_color)
 
         tk.Label(
@@ -82,15 +82,16 @@ class WeatherApp:
                 f"    {miasto.upper()}\n"
                 f"Temperatura: {dane['temp']}°C\n"
                 f"{dane['opis'].capitalize()}\n"
-                f"Wilgotność: {dane['wilgotnosc']}%"
+                f"Wilgotność: {dane['wilgotnosc']}%\n"
+                f"Czas: {dane['czas']}"
             )
-            self.result_label.config(text=wynik_tekst)
+            self.result_label.config(text=wynik_tekst, fg="white")
             aqi_info = f"Powietrze: {opis_aqi}"
             self.air_label.config(text=aqi_info)
             self.air_label.config(fg=kolor_aqi)
         else:
             self.icon_label.config(image='', text="")
-            self.result_label.config(text="❌ Nie znaleziono miasta!", fg="#e74c3c")
+            self.result_label.config(text="Nie znaleziono miasta!", fg="#e74c3c")
             self.air_label.config(text="")
 if __name__ == "__main__":
     load_dotenv()
